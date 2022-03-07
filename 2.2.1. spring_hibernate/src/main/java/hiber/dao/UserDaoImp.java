@@ -45,11 +45,11 @@ public class UserDaoImp implements UserDao {
       if (!findCarList.isEmpty()) {
          Car findCar = findCarList.get(0);
          List<User> ListUser = listUsers();
-         User FindUser = ListUser.stream()
+         User findUser = ListUser.stream()
                  .filter(user -> user.getCar().equals(findCar))
                  .findAny()
                  .orElse(null);
-         return FindUser;
+         return findUser;
       }
       return null;
    }
